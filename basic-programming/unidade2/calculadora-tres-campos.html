@@ -20,56 +20,41 @@
     <script>
     function responder() {
 
-      var num1 = document.getElementById("num1").value;
-      var num2 = document.getElementById("num2").value;
-      var num3 = document.getElementById("num3").value;
+      var num1 = document.getElementById("num1").value.replace(",",".");
+      var num2 = document.getElementById("num2").value.replace(",",".");
+      var num3 = document.getElementById("num3").value.replace(",",".");
+      var resposta = document.getElementById("mensagem");
 
-      if (num1 === "") {
-        alert("Preencha todos os campos!");
-      } else if (num2 === "") {
-        alert("Preencha todos os campos!");
-      } else if (num3 === "") {
-        alert("Preencha todos os campos!");
+      if (num1 === "" || num2 === "" || num3 === "") {
+        resposta.textContent = "Preencha todos os campos.";
+        return false;
       }
-
-      num1 = num1.replace(",",".");
-      num2 = num2.replace(",",".");
-      num3 = num3.replace(",",".");
 
       num1 = parseFloat(num1);
       num2 = parseFloat(num2);
       num3 = parseFloat(num3);
 
-      if (isNaN(num1)) {
-        alert("Utilize apenas números!");
-      } else if (isNaN(num2)) {
-        alert("Utilize apenas números!");
-      } else if (isNaN(num3)) {
-        alert("Utilize apenas números!");
+      if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+        resposta.textContent = "Utilize apenas números.";
+        return false;
       }
 
-      if (num1 < 0) {
-        alert("Utilize apenas números positivos.");
-      } else if (num2 < 0) {
-        alert("Utilize apenas números positivos.");
-      } else if (num3 < 0) {
-        alert("Utilize apenas números positivos.");
+      if (num1 < 0 || num2 < 0 || num3 < 0) {
+        resposta.textContent = "Utilize apenas números positivos.";
+        return false;
       }
 
       var resultado = (num1 + num2 + num3) / 3;
-      resultado = Math.round(resultado * 100)/100;
-
-      var resposta = document.getElementById("mensagem");
 
       if (resultado > 6) {
-        resposta.textContent = "Parabéns! Você foi aprovada com a média " + resultado + ".";
+        resposta.textContent = "Parabéns! Você foi aprovada com a média " + resultado.toFixed(2) + ".";
       } else {
-        resposta.textContent = "Que pena, você está reprovada. Sua média atual é " + resultado + ".";
+        resposta.textContent = "Que pena, você está reprovada. Sua média atual é " + resultado.toFixed(2) + ".";
       }
 
       return false;
     }
-    
+
     </script>
   </body>
 </html>
