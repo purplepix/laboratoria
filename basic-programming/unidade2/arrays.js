@@ -1,11 +1,13 @@
+//Guided Exercises I
+// 1. Reverse
 
-var idade = [80, 60, 45, 20, 7, 1];
-for (var co = 0; co < idade.length; co = co + 1) {
-  console.log(idade[co]);
-}
 
-//vantagem de usar o for ao invés de while:
-var idades = [80, 60, 45, 20, 7, 1];
-for (printIdade of idades) {
-  console.log(printIdade);
-}
+var bestPlayers = ["Joana", "Camila", "Janete", "Marcela", "Roberta"];
+
+var worstPlayers = bestPlayers.reverse();
+console.log(worstPlayers);
+
+bestPlayers.reverse();
+console.log(bestPlayers);
+
+// 2. Search (#2-Search)
