@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Contando Caracteres e Espaços</title>
+  </head>
+  <body>
+
+    <h1>Contando Caracterese Espaços</h1>
+    <div id='printResultHere'></div>
+  </body>
+
+  <script>
+
+  var string = prompt('Escreva algo aqui e lhe direi quantos caracteres e quantos espaços sua frase tem. Duvida?');
+  var writeHere = document.getElementById('printResultHere');
+  var strLength = string.length;
+  var strSpaceless = string.replace(/ /g,'');
+  var strSpacelessLength = strSpaceless.length;
+
+  if (string === "") {
+      alert("Vai! Escreve alguma coisa! Eu aposto com você que não vou errar!");
+      document.location.reload(false);
+    }
+
+    //existe outra forma de reiniciar a pergunta sem ter que recarregar a página?
+
+  function writeVertical() {
+    for (i = 0; i < strLength; i++) {
+      writeHere.innerHTML += "<p>" + string.charAt(i).toUpperCase() + "</p>";
+    }
+  }
+
+  function wordCount() {
+    writeHere.innerHTML += "Você digitou " + strSpacelessLength + " caracteres ";
+  }
+
+  function spaceCount() {
+    var spaceLength = strLength - strSpacelessLength;
+    writeHere.innerHTML += "e " + spaceLength + " espaços em branco.";
+  }
+
+writeVertical(string);
+wordCount(string);
+spaceCount(string);
+
+  </script>
+</html>

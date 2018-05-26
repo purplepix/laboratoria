@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Gerador de Tabuleiro de Xadrez no Console</title>
+
+  </head>
+  <body>
+    <p>Gerador de Tabuleiro de Xadrez no Console</p>
+    <table id = 'table'>
+    </table>
+  </body>
+
+ <script>
+
+ var spaces = parseInt(prompt("Qual a largura do tabuleiro em número de quadrados?"));
+ var result = "";
+
+ for (row = 1; row <= spaces; row++) {
+   for (column = 1; column <= spaces; column++) {
+     if ((column + row) % 2 === 0) {
+       result += " ";
+     } else {
+       result += "#";
+     }
+   }
+   result += '\n';
+ }
+
+console.log(result);
+
+</script>
+</html>
