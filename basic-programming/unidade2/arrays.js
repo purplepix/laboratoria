@@ -249,7 +249,8 @@ function findPairForSum(array, number) {
   var arrayLine = array.slice(1);
 
   for (i = 0; i < arrayColumn.length; i++) {
-    for (v = 0; v < arrayLine.length; v++) {
+// a segunda variável tem que ser i + 1 para não repetir soma
+    for (v = i + 1; v < arrayLine.length; v++) {
       if (arrayColumn[i] + arrayLine[v] === number) {
       return [arrayColumn[i], arrayLine[v]];
       }
