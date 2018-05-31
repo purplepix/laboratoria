@@ -350,7 +350,7 @@ function findShortestWordAmongMixedElements(arr) {
   }
 }
 
-// 08 - Find Smallest Number Among Mixed Elements
+// 08 - Find Longest Number Among Mixed Elements
 
 function findSmallestNumberAmongMixedElements(arr) {
     if (arr.length < 1) {
