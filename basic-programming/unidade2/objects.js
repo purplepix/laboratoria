@@ -79,39 +79,106 @@ scoreOfEachFriend('Roberta', 40);
 
 //    2. Caixa Automático
 
-// 1.Perguntar o que o cliente quer fazer (sacar ou sair)
-//   1.1 Sair --> terminar o programa
-//   1.2 Sacar --> entrar na função sacar
-// 2.Qual o valor que o cliente quer sacar?
-// 3.Verificar se o valor que o cliente deseja está disponível na máquina (total da máquina)
-//   3.1 Se não tiver, avisar que não será possível sacar.
-// 4.Verificar se o valor é maior que 100
-//   4.1 Se não for maior que 100, passar para 50.
-//   4.2 Se for maior que 100:
-//     4.2.1 Dividir o valor por 100 e manter apenas o número inteiro
-//     4.2.2 Verificar se o número inteiro está disponível para saque
-//       4.2.2.1 Se não tiver disponível, segue para 50.
-//       4.2.2.2 Se tiver disponível
-//         4.2.2.2.1 Subtrair o número de notas que será entregue do total disponível na máquina.
-//         4.2.2.2.2 Guardar o número de notas que será entregue ao cliente
-//         4.2.2.2.3 Subtrair o valor pedido do valor em notas 100 que a máquina irá entregar
-//         4.2.2.2.4 Mandar o resultado da subtração para 50.
-//   4.3 Se for maior que 50:
-//     Repetir todo o procedimento anterior.
-//   4.4 Se for maior que 20:
-//     Repetir todo o procedimento anterior
-//   4.5 Se for maior que 10:
-//     Repetir todo o procedimento anterior
-//   4.6 Se for maior que 5:
-//     Repetir todo o procedimento anterior
-//   4.7 Se for maior que 1:
-//     Repetir todo o procedimento anterior
-//   4.8 Se for = 0
-//     4.8.1 (Imprimir no console o total de notas de cada tipo disponível. Só para verificar, não é necessário).
-//     4.8.2 Retornar número total de notas de cada tipo que o cliente irá receber.
-//   4.9 Retornar à pergunta inicial.
+var availableCash = [
+	{ value: 100, stock: 100 },
+	{ value: 50, stock: 50 },
+	{ value: 20, stock: 200 },
+	{ value: 10, stock: 300 },
+	{ value: 5, stock: 500 },
+	{ value: 1, stock: 800 },
+];
+
+var cashReceived = {};
+var totalCash;
+
+do {
+	var whatDoYouWant;
+	var amountWanted;
+	whatDoYouWant = parseFloat(
+		prompt('O que você deseja fazer? 1. Sacar / 2. Sair')
+	);
+	if (whatDoYouWant === 1) {
+		amountWanted = parseFloat(
+			prompt('Quanto você deseja sacar?').replace(',', '.')
+		);
+		if (amountWanted > sumCash(availableCash)) {
+			alert(
+				'Infelizmente não tenho a quantia desejada. Dirija-se a outra máquina.'
+			);
+		} else {
+      withdrawal(amountWanted);
+
+      console.log('-------------------------------\n');
+      console.log('Saque de ' + amountWanted + ' reais realizado com sucesso.\n');
+
+			billsWithdrawn(cashReceived);
+
+      console.log('-------------------------------\n');
+		}
+	}
+} while (whatDoYouWant === 1);
+
+function sumCash(availableCash) {
+  totalCash = 0;
+  console.log('Estoque da máquina:\n')
+	for (i = 0; i < availableCash.length; i++) {
+		totalCash += availableCash[i]['value'] * availableCash[i]['stock'];
+		console.log(
+			'Notas de R$ ' +
+				availableCash[i]['value'] +
+				': ' +
+				availableCash[i]['stock']
+		);
+	}
+  console.log('No caixa restam R$ ' + totalCash + ' reais.\n');
+  return totalCash;
+}
+
+
+function withdrawal(amountWanted) {
+	for (j = 0; j < availableCash.length; j++) {
+		var numberBillsSameValue = Math.floor(
+			amountWanted / availableCash[j]['value']
+		);
+		if (amountWanted >= availableCash[j]['value'] && availableCash[j]['stock'] >= 1) {
+      if (numberBillsSameValue > availableCash[j]['stock']) {
+        var yetToPay = numberBillsSameValue - availableCash[j]['stock'];
+        availableCash[j]['stock'] = 0;
+      numberBillsSameValue = yetToPay;
+      } else {
+			  availableCash[j]['stock'] -= numberBillsSameValue;
+			  cashReceived[availableCash[j]['value']] = numberBillsSameValue;
+			  amountWanted -= numberBillsSameValue * availableCash[j]['value'];
+		  }
+	  }
+  }
+}
+
+function billsWithdrawn(cashReceived) {
+	var billsWithdrawn = 0;
+	for (var value in cashReceived) {
+		billsWithdrawn += cashReceived[value];
+	}
+
+  console.log('Você rebeceu ' + billsWithdrawn + ' notas.\n');
+}
 
 // 8. Desafios de código
+
+// addArrayProperty
+
+function addArrayProperty(obj, key, arr) {
+  var myObj = obj;
+  myObj[key] = arr;
+  console.log(myObj[key]);
+}
+
+var myObj = {};
+var myStr = 'myProperty';
+var myArray = [1 ,3];
+
+addArrayProperty({}, 'KEY', [5, 8, 12])
+
 // removeStringValuesLongerThan
 
 var perfil = {
@@ -131,3 +198,219 @@ function removeStringValuesLongerThan(num, obj) {
 }
 
 removeStringValuesLongerThan(6, perfil);
+
+// getElementOfArrayProperty
+
+function getElementOfArrayProperty(obj, key, index) {
+  if(obj[key] === undefined) {
+    return undefined;
+  }
+  if(obj[key].length === 0) {
+    return undefined;
+  }
+  if(Array.isArray(obj[key]) === false) {
+    return undefined;
+  }
+  if(index >= obj[key].length) {
+    return undefined;
+  }
+  return obj[key][index];
+}
+
+var obj = {
+  head: [1]
+};
+
+getElementOfArrayProperty(obj, 'head', 1);
+
+// greetCustomer
+
+var customerData = {
+  'Joe': {
+    visits: 1
+  },
+  'Carol': {
+    visits: 2
+  },
+  'Howard': {
+    visits: 3
+  },
+  'Carrie': {
+    visits: 4
+  }
+};
+
+function greetCustomer(firstName) {
+  var greeting = '';
+	  if (customerData[firstName] === undefined) {
+    greeting = 'Welcome! Is this your first time?';
+  } else {
+    if (customerData[firstName]['visits'] === 1) {
+      greeting = 'Welcome back, ' + firstName + '! We\'re glad you liked us the first time!';
+    }
+    if (customerData[firstName]['visits'] > 1) {
+      greeting = 'Welcome back, ' + firstName + '! So glad to see you again!';
+    }
+  }
+  return greeting;
+}
+
+module.exports = greetCustomer;
+
+// transformFirstAndLast
+
+function transformFirstAndLast(array) {
+  var obj = {};
+  var lastIndex = array.length - 1;
+  obj[array[0]] = array[lastIndex];
+  return obj;
+}
+
+transformFirstAndLast(['QUEEN', 'ELIZABETH', 'OF HEARTS', 'BEYONCE']);
+
+// getAllKeys
+
+function getAllKeys(obj) {
+  var array = [];
+  for (var key in obj) {
+    array.push(key);
+  }
+  return array;
+}
+
+getAllKeys({ TES : 'TES', INI : 'APA',BERHASIL : 10 });
+
+// fromListToObject
+
+function fromListToObject(array) {
+  var obj = {};
+  for (i = 0; i < array.length; i++) {
+    obj[array[i][0]] = array[i][1];
+  }
+  return obj;
+}
+
+fromListToObject([['make', 'Ford'], ['model', 'Mustang'], ['year', 1964]]);
+
+// listAllValues
+
+function listAllValues(obj) {
+  var array = [];
+  for (var key in obj) {
+  array.push(obj[key]);
+  }
+  return array;
+}
+
+listAllValues({ TEZ: 'YES' });
+
+
+// transformEmployeeData
+
+function transformEmployeeData(array) {
+  var newData = [];
+  for (i = 0; i < array.length; i++) {
+    newData.push({});
+    for (j = 0; j < array[i].length; j++) {
+      newData[i][array[i][j][0]] = array[i][j][1];
+    }
+  }
+  return newData;
+}
+
+transformEmployeeData([
+  [['firstName', 'Joe'],
+   ['lastName', 'Blow'],
+   ['age', 42],
+   ['role', 'clerk']
+  ],
+  [['firstName', 'Mary'],
+   ['lastName', 'Jenkins'],
+   ['age', 36 ],
+   ['role', 'manager']
+  ]
+]);
+
+// convertObjectToList
+
+function convertObjectToList(obj) {
+  var array = [];
+  for (var key in obj) {
+    array.push([key, obj[key]]);
+  }
+  return array;
+}
+
+convertObjectToList({
+  name: 'Holly',
+  edad: 35,
+  papel: 'productor'
+});
+
+// getSumOfAllElementsAtProperty
+
+function getSumOfAllElementsAtProperty(obj, key) {
+  if (obj[key] === undefined) {
+    return 0;
+  }
+  if (obj[key].length === 0) {
+    return 0;
+  }
+  if (Array.isArray(obj[key]) === false) {
+    return 0;
+  }
+  var sumAllElementsOfObj = 0;
+  for (i = 0; i < obj[key].length; i++) {
+    sumAllElementsOfObj += obj[key][i];
+  }
+  return sumAllElementsOfObj;
+}
+
+var olar = {
+  what: [1,2,3,4,5,6,7,8,9,10]
+};
+
+getSumOfAllElementsAtProperty(olar, 'what');
+
+// getProductOfAllElementsAtProperty
+
+function getProductOfAllElementsAtProperty(obj, key) {
+  if (obj[key] === undefined) {
+    return 0;
+  }
+  if (obj[key].length === 0) {
+    return 0;
+  }
+  if (Array.isArray(obj[key]) === false) {
+    return 0;
+  }
+  var productAllElementsOfObj = 1;
+  for (i = 0; i < obj[key].length; i++) {
+    productAllElementsOfObj *= obj[key][i];
+  }
+  return productAllElementsOfObj;
+}
+
+var olar = {
+  what: [1,2,3,4,5]
+};
+
+getProductOfAllElementsAtProperty(olar, 'what');
+
+// addObjectProperty
+
+function addObjectProperty(obj1, key, obj2) {
+  obj1[key] = obj2;
+  return obj1[key];
+}
+
+addObjectProperty({ NAME : 'MEDINA', ROLE : 'EUUUUHHH' }, 'BAWAHAN', { NAME : 'FADEL', ROLE : 'AAAAHHHH' });
+
+// addFullNameProperty
+
+function addFullNameProperty(obj) {
+  obj.fullName = obj['firstName'] + ' ' + obj['lastName'];
+  return obj.fullName;
+}
+
+addFullNameProperty({ firstName : 'KEMAL', lastName : 'MAHMUD' });

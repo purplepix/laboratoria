@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<hmtl>
+  <head lang="pt-br">
+    <title id="titletitle">Star Wars Trívia</title>
+    <meta charset="UTF-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:400,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+
+  <body>
+    <h1>Star Wars Trívia</h1>
+
+    <div class="username-box">
+      <form class= "username form">
+      Qual é o seu nome?<br>
+      <input type="text" class="answer-box" id="write-name">
+      </form>
+    </div>
+
+    <div class="questions-box">
+      <form class="questions form">
+      <p class="quiz-opening">Responda as perguntas abaixo e mostre que você <br> sabe tudo sobre <em>Star Wars</em>!</br>
+      </p>
+      <img src="https://res.cloudinary.com/jerrick/image/upload/f_auto,fl_progressive,q_auto,c_fit,w_1140/b0xn7uexvv7o3yz9d7gd" alt="O jovem Luke Skywalker observa o pôr do sol em Tatooine."><br>
+      Em que ano o filme <em>Star Wars: Episódio IV - Uma Nova Esperança</em> foi lançado?<br>
+      <input type="text" class="answer-box" id="firstQuestion"><br><br>
+      <img src="https://lumiere-a.akamaihd.net/v1/images/this-partys-over_22b1e668.jpeg?region=204%2C89%2C1076%2C538" alt="Mace Windu olha desconfiado para alguém fora de quadro."><br>
+      Qual a cor do sabre de luz de Mace Windu?<br>
+      <input type="text" class="answer-box" id="secondQuestion"><br><br>
+      <img src="https://cineinside.com/wp-content/uploads/2017/03/Yoda-Dagobah-1-1024x640.jpg" alt="Yoda parado no meio do pântano de Dagobah."><br>
+      Para qual planeta Luke vai para ser treinado pelo Mestre Yoda?<br>
+      <input type="text" class="answer-box" id="thirdQuestion"><br><br>
+      <img src="https://i1.wp.com/media.boingboing.net/wp-content/uploads/2017/01/Shmi-Ani-Phantom-Menace.jpg?w=1263&ssl=1" alt="O pequeno Anakin conversa com sua mãe em sua oficina."><br>
+      Qual o primeiro nome da mãe de Anakin Skywalker?<br>
+      <input type="text" class="answer-box" id="fourthQuestion"><br><br>
+      <img src="http://geeknerdery.com/wp-content/uploads/2016/11/dvgn.jpg" alt="Darth Vader revela seu segredo para Luke em Bespin."><br>
+      Qual a frase mais famosa de Darth Vader?<br>
+      <input type="text" class="answer-box" id="fifthQuestion"><br><br>
+      <button type="button" id="style-button" onclick="sendData()">ENVIAR
+      </button>
+      </form>
+    </div>
+
+    <div class="welcome-box">
+      <p id="welcomespace">Clique em "ENVIAR" para ver se você acertou!</p>
+    </div>
+
+    <div class="answers-table">
+      <div class="left">
+        <h2 class="title-left">Respostas Corretas:
+        </h2>
+        <p class=solution id="lline1"></p>
+        <p class=solution id="lline2"></p>
+        <p class=solution id="lline3"></p>
+        <p class=solution id="lline4"></p>
+        <p class=solution id="lline5"></p>
+      </div>
+      <div class="right">
+        <h2 class="title-right">Respostas Incorretas:
+        </h2>
+        <p class=solution id="rline1"></p>
+        <p class=solution id="rline2"></p>
+        <p class=solution id="rline3"></p>
+        <p class=solution id="rline4"></p>
+        <p class=solution id="rline5"></p>
+      </div>
+    </div>
+
+  </body>
+</html>

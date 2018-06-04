@@ -1,0 +1,114 @@
+body {
+  background-image: url("https://www.lego.com/r/www/r/catalogs/-/media/catalogs/activities/star%20wars/2016/backgrounds/lsw_activities_backgrounds_starfield_primary.jpg");
+  background-color: #000;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #ffd800;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 900;
+  text-align: center;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 900;
+  padding-left:20px;
+}
+
+.quiz-opening {
+  font-weight: 900;
+  font-size: 28px;
+}
+
+img {
+  border-radius: 30px;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  object-fit: cover;
+}
+
+.form {
+  display: block;
+  border: solid 1px #ffd800;
+  border-radius: 30px;
+  background-color: #000;
+  padding: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+}
+
+.answer-box {
+  border-radius: 10px;
+  border: solid 2px #ffd800;
+  margin-top: 20px;
+  width: 30%;
+  padding: 5px;
+  background-color: #191919;
+  color: #fff;
+  font-size: 20px;
+}
+
+.username {
+  margin-bottom: 20px;
+  padding-bottom:30px;
+}
+
+#style-button {
+  cursor: pointer;
+  background-color: #ffd800;
+  padding: 10px;
+  font-size: 15px;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 900;
+  color: #000;
+  border-radius: 30px;
+  border: solid 1px #ffd800;
+}
+
+.welcome-box {
+  display: block;
+  padding: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+}
+
+.answers-table {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  display: flex;
+}
+
+.right {
+  display: inline-block;
+  border: solid 1px #ffd800;
+  border-radius: 30px;
+  background-color: #000;
+  width: 48%;
+  margin: 0 auto;
+  margin-left: 4%;
+  height: 550px;
+}
+
+.left {
+  display: inline-block;
+  border: solid 1px #ffd800;
+  border-radius: 30px;
+  background-color: #000;
+  width: 48%;
+  margin: 0 auto;
+  height: 550px;
+}
+
+.solution {
+  padding-left: 20px;
+  padding-right: 20px;
+}
