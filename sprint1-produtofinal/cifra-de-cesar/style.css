@@ -1,5 +1,5 @@
 body {
-  background-color: #afff6d;
+  background-color: #afe8ff;
   text-align: center;
   font-family: 'Roboto', sans-serif;
   font-size: 24px;
@@ -19,30 +19,6 @@ h1 {
 
 #message-result {
   margin: 3%;
-}
-
-#style-button {
-  margin: 15px;
-  padding: 20px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 24px;
-  font-weight: 500;
-  cursor: pointer;
-  background-color: #e54b86;
-  color: #fff;
-  border-radius: 5px;
-  border: solid 1px #e54b86;
-}
-
-#style-button:hover {
-  background-color: #fff;
-  color: #e54b86;
-  border: solid 1px #fff;
-}
-
-#style-button:active {
-  background-color: #ff3884;
-  color: #303030;
 }
 
 .message {

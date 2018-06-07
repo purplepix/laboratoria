@@ -1,40 +1,35 @@
-var message;
-var charcodedMensage;
+do {
+  var message = prompt('Escreva uma mensagem: \n *O texto não pode conter números, pontuação, "ç" e acentos.');
 
-function cypher() {
-  message = askMessage();
-  charcodedMessage = transformInCharChode(message);
+  if (message.length === 0) {
+    alert('Este campo não pode ficar vazio.');
+  } else if (isNaN(parseInt(message)) === false) {
+    alert('Este campo não aceita números.');
+  } else if (message.length > 0 && isNaN(parseInt(message)) === true) {
+    var encryptedMessage;
+    cipher(message);
+    decipher(encryptedMessage);
+  }
+} while (message.length === 0 || isNaN(parseInt(message)) === false);
+
+function cipher(message) {
+  var charcodedMessage = transformInCharChode(message);
   var cipheredCharCode = cipherCharCode(charcodedMessage);
-  var encryptedMessage = transformInLetters(cipheredCharCode);
-  return document.getElementById('message-result').innerHTML = '<p><font color=#303030> Esta é a sua mensagem criptografada: </font><p> "' + encryptedMessage + '"';
+  encryptedMessage = transformInLetters(cipheredCharCode);
+  document.getElementById('message-result').innerHTML = '<p><font color=#303030> Esta é a sua mensagem criptografada: </font><p> "' + encryptedMessage + '"';
 }
 
-function decypher() {
-  message = askMessage();
-  charcodedMessage = transformInCharChode(message);
+function decipher(encryptedMessage) {
+  charcodedMessage = transformInCharChode(encryptedMessage);
   var decipheredCharCode = decipherCharCode(charcodedMessage);
   var decryptedMessage = transformInLetters(decipheredCharCode);
-  return document.getElementById('message-result').innerHTML = '<p><font color=#303030> Esta é a sua mensagem descriptografada: </font><p> "' + decryptedMessage + '"';
+  document.getElementById('message-result').innerHTML += '<p><font color=#303030> Esta é a sua mensagem descriptografada: </font><p> "' + decryptedMessage + '"';
 }
 
-function askMessage() {
-  do {
-    message = prompt('Escreva uma mensagem: \n *O texto não pode conter números, pontuação, "ç" e acentos.');
 
-    if (message.length === 0) {
-      alert('Este campo não pode ficar vazio.');
-    } else if (isNaN(parseInt(message)) === false) {
-      alert('Este campo não aceita números.');
-    } else if (message.length > 0 && isNaN(parseInt(message)) === true) {
-      message.split('');
-      return message;
-    }
-  } while (message.length === 0 || isNaN(parseInt(message)) === false);
-}
-
-function transformInCharChode(message) {
+function transformInCharChode(array) {
   var aux1 = [];
-  for (eachLetter of message) {
+  for (eachLetter of array) {
     aux1.push(eachLetter.charCodeAt());
   }
   return aux1;
