@@ -129,4 +129,4 @@
 
 ## FLUXOGRAMA
 
-![Fluxograma da validação de número de cartão de crédito] (https://image.ibb.co/dOpxTT/cifra_de_cesar.jpg)
+![Fluxograma da validação de número de cartão de crédito] (https://raw.github.com/purplepix/laboratoria/master/__imagens/fluxograma-cifra-de-cesar.jpeg)
