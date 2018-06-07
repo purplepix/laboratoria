@@ -1,0 +1,17 @@
+body {
+  background-color: #441a84;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  font-family:'Patua One', cursive;
+  font-size: 36px;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 10%;
+  padding: 10px;
+}
