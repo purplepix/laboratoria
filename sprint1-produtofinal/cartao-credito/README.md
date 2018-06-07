@@ -82,4 +82,4 @@
 
 ## FLUXOGRAMA
 
-![Fluxograma da validação de número de cartão de crédito] (https://ibb.co/cMjxCo)
+![Fluxograma da validação de número de cartão de crédito] (https://raw.github.com/purplepix/laboratoria/master/__imagens/fluxograma-validacao-cartao-de-credito.jpeg)
