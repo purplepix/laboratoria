@@ -1,0 +1,15 @@
+.box {
+  background-color: #f76890;
+  display: block;
+  width: 20%;
+  height: 100px;
+  overflow: scroll;
+  margin-left: 35%;
+  margin-right: 35%;
+  border-radius: 50px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
