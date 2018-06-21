@@ -1,0 +1,68 @@
+.box {
+  display: inline-block;
+  margin-right:2%;
+  padding:1%;
+  box-sizing: content-box;
+}
+
+.yellow {
+  background-color: #FFB800;
+}
+
+.grey {
+  background-color: #2B2B2B;
+  color: #fff;
+}
+
+p {
+  margin: 0px;
+}
+
+.background-box {
+  width: 300px;
+  height: 300px;
+  background-color: #42b3f4;
+  position: relative;
+  margin-top: 50px;
+}
+
+.head {
+  width: 250px;
+  height: 250px;
+  background-color: #faff32;
+  border-radius: 50%;
+  position:absolute;
+  top: 25px;
+  left: 25px;
+}
+
+.right-eye {
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 70px;
+  left: 70px;
+}
+
+.left-eye {
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 70px;
+  left: 140px;
+}
+
+.mouth {
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  background-color: #fff;
+  left: 75px;
+  bottom: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
