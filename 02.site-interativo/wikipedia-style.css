@@ -1,7 +1,7 @@
 body {
   font-family: sans-serif;
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
 p {
@@ -19,8 +19,10 @@ hr {
   margin-top: 0px;
 }
 
-ul {
-  list-style-type: none;
+ol {
+  padding-left: 25px;
+  padding-right: 5px;
+  margin-top: 0px;
 }
 
 .sublist {
@@ -29,41 +31,222 @@ ul {
 
 .origin {
   font-size: 13px;
-  margin-top: 10px;
+  margin-top: 0px;
+  padding-bottom: 10px;
 }
 
 .summary-titles {
   font-weight: bold;
 }
 
-.main-info {
+.indice {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 13px;
+}
 
+.main-info {
+  width: 78%;
+  display: inline-block;
+  margin: 0px;
 }
 
 .topics {
-
+  display: inline-block;
+  background-color: #F8F9FA;
+  border: 1px solid #A2A9B1;
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 10px 0px;
 }
 
 .plot {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin-top: 0px;
+}
 
+.title-plot {
+  margin: 0px;  ß
 }
 
 .info-box {
   font-size: 12px;
+  width: 21%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px;
+  float:right;
+  line-height: 1.2;
+  background-color: #F8F9FA;
+  border: 1px solid #A2A9B1;
+}
+
+.infobox th, .infobox td {
+  padding: 1px 3px;
+}
+
+.oswaldo-title {
+  font-size: 18px;
+  font-style: italic;
+  padding: 12px;
+  background-color: #F2CECE;
+}
+
+.info-box-sections {
+  background-color: #F2CECE;
+  padding: 3px;
 }
 
 .cast {
   width: 100%;
 }
 
+.table-cast {
+  border: 1px solid #A2A9B1;
+  border-collapse: collapse;
+  margin: 15px 0px;
+}
+
+.table-cast th {
+  background-color: #EAECF0;
+  border: 1px solid #A2A9B1;
+}
+
+.table-cast td {
+  background-color: #F8F9FA;
+  padding: 3px 10px;
+  border: 1px solid #A2A9B1;
+}
+
 .seasons {
   width: 100%;
+}
+
+.table-seasons {
+  background-color: #EAECF0;
+  border: 1px solid #A2A9B1;
+  border-collapse: collapse;
+  text-align: center;
+  margin: 15px 0px;
+}
+
+.table-seasons td {
+  background-color: #F8F9FA;
+}
+
+.table-seasons th, .table-seasons td {
+  padding: 3px 7px;
+  border: 1px solid #A2A9B1;
+}
+
+.tba {
+  background-color: #EAECF0;
+  color: #808080;
 }
 
 .episodes {
   width: 100%;
 }
 
+.table-episodes {
+  border: 1px solid #A2A9B1;
+  border-collapse: collapse;
+  padding: 3px 7px;
+}
+
+.table-episodes .episode-title {
+  text-align: left;
+  padding-left: 10px;
+}
+
+.table-episodes .authors {
+  border: 0px solid #A2A9B1;
+  border-right: 1px solid #A2A9B1;
+}
+
+.table-episodes th {
+  background-color: #791344;
+  border: 1px solid #A2A9B1;
+  }
+
+.table-episodes td {
+  background-color: #F2F2F2;
+  border: 1px solid #A2A9B1;
+  text-align: center;
+}
+
+td.row-episode-plot {
+  background-color: #F8F9FA;
+  border-bottom: 3px solid #791344;
+  text-align: left;
+}
+
 .learn-more {
   width: 100%;
+}
+
+.warning {
+  font-style: italic;
+  padding-bottom: 10px;
+}
+
+.ul-without-bullet {
+  background-color: #F9F9F9;
+  border-top: 1px solid #A2A9B1;
+  border-bottom: 1px solid #A2A9B1;
+  padding: 3px 7px;
+  list-style-type: none;
+  text-align: center;
+  font-weight: bold;
+}
+
+.ul-without-bullet li {
+  display: inline;
+  margin: 0px 30px;
+}
+
+.br-small-flag {
+  width: 22px;
+  vertical-align: middle;
+}
+
+.br-medium-flag {
+  width: 25px;
+  vertical-align: middle;
+  padding-right: 7px;
+}
+
+.claquete {
+  width: 32px;
+  vertical-align: middle;
+}
+
+.wiki-animation {
+  width: 28px;
+  vertical-align: middle;
+  padding-right: 7px;
+}
+
+.wiki-cn {
+  width: 28px;
+  vertical-align: middle;
+  padding-right: 7px;
+}
+
+.wiki-tv {
+  width: 28px;
+  vertical-align: middle;
+  padding-right: 7px;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #0B0080;
+}
+
+a {
+  text-decoration: none;
 }
