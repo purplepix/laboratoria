@@ -1,3 +1,5 @@
+/*Caixas de textos: */
+
 .box {
   display: inline-block;
   margin-right:2%;
@@ -17,6 +19,8 @@
 p {
   margin: 0px;
 }
+
+/*Smiley Face*/
 
 .background-box {
   width: 300px;
@@ -65,4 +69,137 @@ p {
   bottom: 50px;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
+}
+
+/* Boxes */
+
+.redbox {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-color: red;
+}
+
+.purplebox {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: purple;
+  top: 100px;
+  left: 100px;
+}
+
+.yellowbox {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  top: 0px;
+}
+
+.bluebox {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-color: blue;
+}
+
+.blackbox {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  top: 0px;
+}
+
+.greenbox {
+  position: absolute;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: green;
+  top: 100px;
+  left: 100px;
+}
+
+/* O Senhor dos Anéis */
+
+.capa {
+  width: 46%;
+  height: 300px;
+  margin-left: 27%;
+}
+
+.triptico {
+  margin: auto;
+  width: 90%;
+  text-align: center;
+  border: 1px solid #0b5611;
+  overflow: auto;
+  background-color: #0b5611;
+  color: #fff;
+  box-sizing: border-box;
+  font-family: 'IM Fell English SC', serif;
+}
+
+.primeiro {
+  box-sizing: border-box;
+  width: 33.333%;
+  height: 520px;
+  border: 1px solid #0b5611;
+  float: left;
+  background-color: #fffdf7;
+  text-align: justify;
+}
+
+.segundo {
+  box-sizing: border-box;
+  width: 33.333%;
+  height: 520px;
+  border: 1px solid #0b5611;
+  float: left;
+  background-color: #fffdf7;
+  text-align: justify;
+}
+
+.terceiro {
+  box-sizing: border-box;
+  width: 33.333%;
+  height: 520px;
+  border: 1px solid #0b5611;
+  float: left;
+  background-color: #fffdf7;
+  text-align: justify;
+}
+
+.sda-title {
+  font-size: 30px;
+  padding: 5px;
+  border: 1px solid #000;
+
+}
+
+.sda-title2 {
+  text-align: center;
+  font-size: 22px;
+  padding: 5%;
+  color: #3f3f3f;
+}
+
+.sda-text {
+  padding: 4%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #3f3f3f;
+}
+
+.sda-link {
+  clear: both;
+  padding: 5px;
+  border: 1px solid #000;
+  font-size: 18px;
+}
+
+a {
+  color: #fff;
 }
