@@ -66,3 +66,8 @@ p {
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
 }
+
+.icon-connection {
+  background-color: #000;
+  border: 2px solid black;
+}
