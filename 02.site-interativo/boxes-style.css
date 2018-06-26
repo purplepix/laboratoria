@@ -71,11 +71,6 @@ p {
   border-bottom-right-radius: 50px;
 }
 
-<<<<<<< HEAD
-.icon-connection {
-  background-color: #000;
-  border: 2px solid black;
-=======
 /* Boxes */
 
 .redbox {
@@ -130,9 +125,9 @@ p {
 /* O Senhor dos Anéis */
 
 .capa {
-  width: 46%;
+  width: 200px;
   height: 300px;
-  margin-left: 27%;
+  margin-left: 21.2%;
 }
 
 .triptico {
@@ -205,7 +200,125 @@ p {
   font-size: 18px;
 }
 
-a {
+.sda-link a {
   color: #fff;
->>>>>>> d8233cfefe3dfc7792c3456d1b618d5f963f19c2
+}
+
+/* Segundo menu, com ícones */
+
+.menu-with-icons {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 80px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.box1 {
+  background-color: #e5e5e5;
+  padding: 20px;
+  width: 150px;
+  height: 170px;
+  box-shadow: 3px 3px 3px #cecece;
+  transition: transform .2s;
+}
+
+.box1:hover {
+  background: #efefef;
+  border-bottom: 5px solid #183f99;
+  transform: scale(1.1);
+}
+
+.box2 {
+  background-color: #e5e5e5;
+  padding: 20px;
+  width: 150px;
+  height: 170px;
+  box-shadow: 3px 3px 3px #cecece;
+  transition: transform .2s;
+}
+
+.box2:hover {
+  background: #efefef;
+  border-bottom: 5px solid #b72009;
+  transform: scale(1.1);
+}
+
+.box3 {
+  background-color: #e5e5e5;
+  padding: 20px;
+  width: 150px;
+  height: 170px;
+  box-shadow: 3px 3px 3px #cecece;
+  transition: transform .2s;
+}
+
+.box3:hover {
+  background: #efefef;
+  border-bottom: 5px solid #5c0fd8;
+  transform: scale(1.1);
+}
+
+.box4 {
+  background-color: #e5e5e5;
+  padding: 20px;
+  width: 150px;
+  height: 170px;
+  box-shadow: 3px 3px 3px #cecece;
+  transition: transform .2s;
+}
+
+.box4:hover {
+  background: #efefef;
+  border-bottom: 5px solid #eda900;
+  transform: scale(1.1);
+}
+
+.box5 {
+  background-color: #e5e5e5;
+  padding: 20px;
+  width: 150px;
+  height: 170px;
+  box-shadow: 3px 3px 3px #cecece;
+  transition: transform .2s;
+}
+
+.box5:hover {
+  background: #efefef;
+  border-bottom: 5px solid #08a00d;
+  transform: scale(1.1);
+}
+
+.menu-with-icons .button {
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+.menu-with-icons p {
+  padding: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  justify-content: space-around;
+}
+
+.icon-home {
+  color: #183f99;
+}
+
+.icon-video-camera {
+  color: #b72009;
+}
+
+.icon-tv {
+  color: #5c0fd8;
+}
+
+.icon-pacman {
+  color: #eda900;
+}
+
+.icon-mail4 {
+  color: #08a00d;
 }
