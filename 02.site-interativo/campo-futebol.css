@@ -1,0 +1,63 @@
+body {
+  margin: 0px;
+}
+
+.gramado {
+  background-color: #8CB27C;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.campo {
+  background-color: #8CB27C;
+  width: 95vw;
+  height: 90vh;
+  position: absolute;
+  border: 1vh solid #fff;
+  top: 4vh;
+  left: 2vw;
+  cursor:url(https://i.imgur.com/wvPdlXL.png), auto;
+}
+
+.area-esquerda {
+  background-color: #8CB27C;
+  width: 13.5vw;
+  height: 44vh;
+  border-top: 1vh solid #fff;
+  border-right: 1vh solid #fff;
+  border-bottom: 1vh solid #fff;
+  position: absolute;
+  top: 22vh;
+}
+
+.area-direita {
+  background-color: #8CB27C;
+  width: 13.5vw;
+  height: 44vh;
+  border-top: 1vh solid #fff;
+  border-left: 1vh solid #fff;
+  border-bottom: 1vh solid #fff;
+  position: absolute;
+  top: 22vh;
+  right: 0vw;
+}
+
+.area-centro {
+  background-color: #8CB27C;
+  width: 16%;
+  height: 32%;
+  border-radius: 50%;
+  border: 1vh solid #fff;
+  position: absolute;
+  top: 32.75%;
+  left: 41.5%;
+}
+
+.linha-central {
+  width: 1vh;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  left: 47.25vw;
+}
