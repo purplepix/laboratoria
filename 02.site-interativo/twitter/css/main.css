@@ -1,0 +1,340 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #E6ECF0;
+}
+
+body, textarea, button {
+  font-family: 'Segoe UI', 'Open Sans', sans-serif;
+}
+
+h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1DA1F2;
+  color: #fff;
+  text-align: center;
+  height: 50px;
+}
+
+.center-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+.left-nav-links {
+  align-items: flex-end;
+  height: 50px;
+  margin: 0px 100px 0px 0px;
+  padding: 0px;
+}
+
+.menu {
+  padding: 0 10px 12px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0px;
+}
+
+.menu:hover {
+  border-bottom: 2px solid white;
+}
+
+.fas, .far {
+  padding: 5px;
+  font-size: 16px;
+}
+
+ul a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.search {
+  border: none;
+  background-color: #fff;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding: 0 10px;
+  color: #cecece;
+  margin-left: 110px;
+}
+
+.search form {
+  padding: 0;
+}
+
+.search input {
+  border: none;
+  font-size: 13px;
+  color: #727272;
+  outline: none;
+}
+
+.search input::placeholder {
+  font-size: 13px;
+  font-weight: 100;
+  color: #727272;
+}
+
+.search i {
+  color: #cecece;
+}
+
+.right-nav-links {
+  height: 40px;
+  padding: 0px;
+  margin-left: 11px;
+  display: flex;
+  align-items: center;
+}
+
+.right-nav-links li {
+  padding: 5px 8px;
+}
+
+.right-nav-links a {
+  display: flex;
+}
+
+.right-nav-links li:last-child {
+  padding: 5px 12px 5px 8px;
+}
+
+.avatar-nav {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.tweet-button-nav, button {
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 5px 15px;
+}
+
+.tweet-button-nav {
+  background-color: #fff;
+  color: #1DA1F2;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.left-col {
+  width: 20%;
+  height: 230px;
+  margin: 10px 6px 12px 0;
+  background-image: url('../assets/images/capa-img-marcia.jpg');
+  background-size: 100% 110px;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  display: flex;
+  align-items: flex-end;
+}
+
+.profile {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.profile img {
+  height: 72px;
+  width: 72px;
+  border-radius: 50%;
+  border: 3.5px solid white;
+  margin: 12px 10px 0 20px;
+}
+
+.username {
+  width: 60%;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+}
+
+.profile a {
+  text-decoration: none;
+}
+
+.username h2 {
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+.username h2 a, .name-feed {
+  color: #000;
+}
+
+.username h3 a, .username-feed {
+  color: #707070;
+}
+
+.username h2 a:hover, .username h3 a:hover {
+  text-decoration: underline;
+}
+
+.username h3 {
+  font-size: 14px;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+.profile table {
+  margin: 12px 10px 12px 28px;
+  text-align: left;
+  width: 50%;
+  table-layout: fixed;
+}
+
+.profile table th {
+  font-size: 12px;
+  width: 78px;
+  padding: 0;
+}
+
+.profile table th a {
+  color: #707070;
+}
+
+.profile table a:hover {
+  color: #1DA1F2;
+}
+
+.profile table td {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0;
+
+}
+
+.profile table td a{
+  color: #1DA1F2;
+}
+
+.main-col {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 40%;
+  margin: 10px 0 12px 6px;
+}
+
+.post {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ccebff;
+  justify-content: flex-end;
+  padding: 15px 0;
+}
+
+.avatar-tweet {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.post form {
+  width: 88%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding: 0 10px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 0;
+  outline: none;
+  resize: none;
+  border: 1.5px solid #70c5ff;
+  border-radius: 10px;
+}
+
+button {
+  margin-top: 10px;
+  border: none;
+  background-color: #1DA1F2;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: #0368a5;
+}
+
+.feed {
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.tweet {
+  width: 100%;
+  border-top: 1px solid #e2e2e2;
+  font-size: 14px;
+  padding: 15px 0;
+}
+
+.tweet:hover {
+  background-color: #F5F8FA;
+}
+
+.avatar-feed {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  padding: 3px 12px;
+  float: left;
+}
+
+.name-feed, .username-feed {
+  height: 25px;
+  margin: 10px 5px 0 0;
+}
+
+.name-feed {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.username-feed {
+  font-size: 14px;
+}
+
+.message {
+  width: 85%;
+  float: left;
+  margin: 3px 0 0 0;
+}
