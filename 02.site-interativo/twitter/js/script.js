@@ -1,12 +1,33 @@
-var button = document.getElementsByTagName('button')[0];
-button.addEventListener('click', addMessageToFeed);
+window.onload = tweet();
+
+function tweet() {
+  var button = document.getElementsByTagName('button')[0];
+  var txtArea = document.getElementsByTagName('textarea')[0];
+  var message = txtArea.value;
+
+  window.onload = (button.disabled = true);
+
+  txtArea.addEventListener('input', countCharacters);
+  button.addEventListener('click', addMessageToFeed);
+}
+
+function countCharacters() {
+  var button = document.getElementsByTagName('button')[0];
+  var message = document.getElementsByTagName('textarea')[0].value;
+  var leftCharacters = 140 - message.length;
+  var counter = document.getElementById('counter');
+  counter.innerHTML = leftCharacters;
+
+  if (message.length > 0 && message.trim() !== '' && message.length <= 140) {
+    button.disabled = false;
+  } else {
+    button.disabled = true;
+  }
+}
 
 function addMessageToFeed() {
   var txtArea = document.getElementsByTagName('textarea')[0];
   var message = txtArea.value;
-
-  var tweetBox = document.createElement('div');
-  tweetBox.className = 'tweet';
 
   var tweetMessage = document.createElement('p');
   tweetMessage.className = 'message';
@@ -15,6 +36,7 @@ function addMessageToFeed() {
   var name = document.createElement('span');
   name.setAttribute('class', 'name-feed');
   name.textContent = 'Marcia Silva';
+
   var username = document.createElement('span');
   username.setAttribute('class', 'username-feed');
   username.textContent = '@MarciaSiIva';
@@ -22,6 +44,9 @@ function addMessageToFeed() {
   var avatar = document.createElement('img');
   avatar.setAttribute('class', 'avatar-feed');
   avatar.setAttribute('src', 'assets/images/avatar-marcia.jpeg');
+
+  var tweetBox = document.createElement('div');
+  tweetBox.className = 'tweet';
 
   tweetBox.appendChild(tweetMessage);
   tweetBox.insertBefore(username, tweetMessage);
@@ -33,4 +58,8 @@ function addMessageToFeed() {
 
   event.preventDefault();
   txtArea.value = '';
+  document.getElementById('counter').innerHTML = 140;
+  counter.removeAttribute('class');
+  document.getElementsByTagName('button')[0].disabled = true;
+  txtArea.style.height = '50px';
 }
