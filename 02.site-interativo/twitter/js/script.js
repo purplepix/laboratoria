@@ -23,6 +23,14 @@ function countCharacters() {
   } else {
     button.disabled = true;
   }
+
+  if (leftCharacters < 10 ) {
+    counter.setAttribute('class', 'red');
+  } else if (leftCharacters < 20) {
+    counter.setAttribute('class', 'orange');
+  } else {
+    counter.setAttribute('class', 'blue');
+  }
 }
 
 function addMessageToFeed() {
@@ -59,7 +67,7 @@ function addMessageToFeed() {
   event.preventDefault();
   txtArea.value = '';
   document.getElementById('counter').innerHTML = 140;
-  counter.removeAttribute('class');
+  counter.setAttribute('class', 'blue');
   document.getElementsByTagName('button')[0].disabled = true;
   txtArea.style.height = '50px';
 }

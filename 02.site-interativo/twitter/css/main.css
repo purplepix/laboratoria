@@ -305,7 +305,18 @@ button:disabled {
   font-weight: bold;
   margin-top: 10px;
   padding: 0 10px;
+}
+
+.blue {
   color: #1DA1F2;
+}
+
+.orange {
+  color: #f79009;
+}
+
+.red {
+  color: #f73c09;
 }
 
 .feed {
