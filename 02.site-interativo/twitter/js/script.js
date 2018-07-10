@@ -48,6 +48,8 @@ function addMessageToFeed() {
   tweetMessage.className = 'message';
   tweetMessage.textContent = message;
 
+  var dateInfo = addDate();
+
   var name = document.createElement('span');
   name.setAttribute('class', 'name-feed');
   name.textContent = 'Marcia Silva';
@@ -64,7 +66,8 @@ function addMessageToFeed() {
   tweetBox.className = 'tweet';
 
   tweetBox.appendChild(tweetMessage);
-  tweetBox.insertBefore(username, tweetMessage);
+  tweetBox.insertBefore(dateInfo, tweetMessage);
+  tweetBox.insertBefore(username, dateInfo);
   tweetBox.insertBefore(name, username);
   tweetBox.insertBefore(avatar, name);
 
@@ -77,4 +80,25 @@ function addMessageToFeed() {
   counter.setAttribute('class', 'blue');
   document.getElementsByTagName('button')[0].disabled = true;
   txtArea.style.height = '53px';
+}
+
+
+function addDate() {
+  var d = new Date();
+  var hour = d.getHours();
+  var minutes = d.getMinutes();
+  var date = d.getDate();
+  var month = d.getMonth();
+  var monthAsText = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+  var year = d.getFullYear();
+
+  if (minutes < 10) {
+    minutes = '0' + minutes;
+  }
+
+  var dateInfo = document.createElement('span');
+  dateInfo.setAttribute('class', 'date');
+  dateInfo.textContent = hour + ':' + minutes + ' - ' + date  + ' de ' + monthAsText[month] + ' de ' + year;
+
+  return dateInfo;
 }
