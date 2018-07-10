@@ -272,13 +272,13 @@ ul a {
 
 textarea {
   width: 100%;
-  padding: 10px;
   margin: 0;
+  padding: 0 5px;
   outline: none;
   resize: none;
   border: 1.5px solid #70c5ff;
   border-radius: 10px;
-  height: 50px;
+  overflow: hidden;
 }
 
 button {

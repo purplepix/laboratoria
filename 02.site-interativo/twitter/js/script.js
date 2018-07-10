@@ -8,6 +8,7 @@ function tweet() {
   window.onload = (button.disabled = true);
 
   txtArea.addEventListener('input', countCharacters);
+  txtArea.addEventListener('input', addTextAreaRows);
   button.addEventListener('click', addMessageToFeed);
 }
 
@@ -31,6 +32,12 @@ function countCharacters() {
   } else {
     counter.setAttribute('class', 'blue');
   }
+}
+
+function addTextAreaRows() {
+  var txtArea = document.getElementsByTagName('textarea')[0];
+  txtArea.style.height = '53px';
+  txtArea.style.height = txtArea.scrollHeight + 'px';
 }
 
 function addMessageToFeed() {
@@ -69,5 +76,5 @@ function addMessageToFeed() {
   document.getElementById('counter').innerHTML = 140;
   counter.setAttribute('class', 'blue');
   document.getElementsByTagName('button')[0].disabled = true;
-  txtArea.style.height = '50px';
+  txtArea.style.height = '53px';
 }
