@@ -1,0 +1,18 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background-color: #505050;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+}
+
+#gameCanvas {
+	background-color: #06022b;
+	margin: 10%;
+}
+
+
