@@ -1,52 +1,49 @@
+$( document ).ready(function() {
+  $('button').on('click', showModal);
+  $('.close').on('click', closeModal);
+  $('#cardnumber-input').on('keydown', getCardNumber); 
+});
 
-do {
-  var cardNumber = prompt('Insira o número do cartão de crédito:').split('');
+const showModal = () => {
+  $('.result').remove();
+  $('.error').remove();
+  $('#modal').css('display', 'block');
+};
+const closeModal = () => $('#modal').css('display', 'none');
+const emptyInput = () => $('#cardnumber-input').val('');
 
-  if (cardNumber.length > 0) {
-    isValidCard(cardNumber);
-  } else {
-    alert('Este campo não pode ficar vazio.');
-  }
-} while (cardNumber.length === 0);
-
-
-function isValidCard(cardNumber) {
-
-  var invertedCardNumber = invertArray(cardNumber);
-
-  var doubledCardNumber = doubleEverySecondDigit(invertedCardNumber);
-
-  var sumResult = sumCardDigits(doubledCardNumber);
-
-  if (sumResult % 10 === 0) {
-    return document.getElementById('result').innerHTML = 'O cartão de crédito inserido é <font color=#5eed2f>válido</font>.';
-  } else {
-    return document.getElementById('result').innerHTML = 'O cartão de crédito inserido <font color=#ff5e5e>não é válido</font>.';
-  }
-}
-
-function invertArray(cardNumber) {
-  var aux1 = [];
-  for (var eachNumber of cardNumber) {
-    aux1.unshift(parseInt(eachNumber));
-  }
-  return aux1;
-}
-
-function doubleEverySecondDigit(invertedCardNumber) {
-  for (i = 1; i < invertedCardNumber.length; i += 2) {
-    invertedCardNumber[i] *= 2;
-    if (invertedCardNumber[i] > 9) {
-        invertedCardNumber[i] -= 9;
+const getCardNumber = (e) => {
+  const cardNumber = $('#cardnumber-input').val().replace(/ +/g, '');
+  if (e.which === 13) {
+    emptyInput();
+    if (cardNumber.trim().length === 0) {
+      $('.error').remove();
+      $('#cardnumber-input').after('<p class="error w-100">Este campo não pode ficar vazio.</p>');
+    } else if (cardNumber.match(/[^\d]+/)) { 
+      $('.error').remove();
+      $('#cardnumber-input').after('<p class="error w-100">Este campo só aceita números.</p>');
+    } else {
+      closeModal();
+      $('.error').remove();
+      isValidCard(cardNumber);
     }
   }
-  return invertedCardNumber;
-}
+} 
 
-function sumCardDigits(doubledCardNumber) {
-  var aux2 = 0;
-  for (var eachNumber of doubledCardNumber) {
-    aux2 += eachNumber;
-  }
-  return aux2;
-}
+const isValidCard = cardNumber => {
+  const invertedCardNumberArray = cardNumber.toString().split('').reverse().map(n => parseInt(n));
+  const doubledCardNumber = doubleEverySecondDigit(invertedCardNumberArray);
+  const sumCardDigits = doubledCardNumber.reduce((sum, n) => sum + n, 0);
+
+  const result = (sumCardDigits % 10 === 0) ? 
+    $('#result').html('<p class="result">O cartão de crédito inserido é <span class="true">válido</span>.</p>') : 
+    $('#result').html('<p class="result">O cartão de crédito inserido <span class="false">não é válido</span>.</p>');
+  return result;
+};
+
+const doubleEverySecondDigit = array => array.map((n, index) => {
+  if (index % 2 !== 0) 
+    n *= 2;
+    if (n > 9) n -=9;
+  return n;  
+});
