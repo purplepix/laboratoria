@@ -26,7 +26,7 @@ const getCardNumber = (e) => {
       isValidCard(cardNumber);
     }
   }
-} 
+}; 
 
 const emptyInput = () => $('#cardnumber-input').val('');
 
@@ -44,6 +44,7 @@ const isValidCard = cardNumber => {
 const doubleEverySecondDigit = array => array.map((n, index) => {
   if (index % 2 !== 0) 
     n *= 2;
-    if (n > 9) n -=9;
+    if (n > 9) 
+      n -= 9;
   return n;  
 });
