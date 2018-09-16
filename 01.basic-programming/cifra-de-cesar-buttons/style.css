@@ -1,50 +1,133 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: #afff6d;
   text-align: center;
+  background-color: #DAECF3;
+}
+
+.roboto {
   font-family: 'Roboto', sans-serif;
-  font-size: 24px;
   font-weight: 500;
-  color: #ce004e;
+  font-size: 1.4rem;
+  color: #022D41;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.j-center {
+  justify-content: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-40 {
+  width: 40vw;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.title-font {
+  font-family:'Patua One', cursive;
+  font-weight: 400;
+  color: #FE424D;
 }
 
 h1 {
-  text-align: center;
-  font-family:'Patua One', cursive;
-  font-size: 36px;
-  font-weight: 400;
-  color: #303030;
-  margin-top: 10%;
-  padding: 10px;
+  margin: 15vh 0 8vh 0;
+  font-size: 2.4rem;
 }
 
-#message-result {
-  margin: 3%;
+h4 {
+  font-size: 1.5rem;
 }
 
-#style-button {
-  margin: 15px;
-  padding: 20px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 24px;
-  font-weight: 500;
-  cursor: pointer;
-  background-color: #e54b86;
-  color: #fff;
+p {
+  margin-bottom: 4vh;
+}
+
+.message-box {
+  height: 7.65vh;
+  margin: 1% 0 2% 0;
+  padding: 1%;
+  font-weight: normal;
+  font-size: 1.2rem;
+  border: 1.5px solid #1AA6B7;
   border-radius: 5px;
-  border: solid 1px #e54b86;
+  outline: none;
+  resize: none;
+  overflow: hidden;
 }
 
-#style-button:hover {
-  background-color: #fff;
-  color: #e54b86;
-  border: solid 1px #fff;
+.btn-style {
+  margin: 1%;
+  padding: 1.5%;
+  color: #fff;
+  background-color: #FE424D;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-#style-button:active {
-  background-color: #ff3884;
-  color: #303030;
+.btn-style:hover, .btn-style:focus {
+  background-color: #1AA6B7;
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
 }
 
-.message {
-  font-size: 24px;
+.btn-style:disabled {
+  background-color: rgb(145, 161, 163);
+  cursor: no-drop;
+}
+
+.result-container {
+  margin-top: 3%;
+  text-align: start;
+}
+
+.result-fixed-message {
+  color: #1ABCBD;
+}
+
+.result-text {
+  white-space: pre-wrap;
+}
+
+@media screen and (max-width: 1200px) {
+  .message-box, .result-container {
+    width: 60vw;
+  }
+  .result-container {
+    margin-top: 5%;
+  }
+  .btn-style {
+    padding: 2%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .message-box, .result-container {
+    width: 80vw;
+  }
+  .result-container {
+    margin-top: 10%;
+  }
+  .btn-style {
+    padding: 3%;
+  }
 }
