@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(() => {
   $('button').on('click', showModal);
   $('.close').on('click', closeModal);
   $('#cardnumber-input').on('keydown', getCardNumber); 
@@ -9,26 +9,26 @@ const showModal = () => {
   $('.error').remove();
   $('#modal').css('display', 'block');
 };
+
 const closeModal = () => $('#modal').css('display', 'none');
-const emptyInput = () => $('#cardnumber-input').val('');
 
 const getCardNumber = (e) => {
+  $('.error').remove();
   const cardNumber = $('#cardnumber-input').val().replace(/ +/g, '');
   if (e.which === 13) {
     emptyInput();
     if (cardNumber.trim().length === 0) {
-      $('.error').remove();
       $('#cardnumber-input').after('<p class="error w-100">Este campo não pode ficar vazio.</p>');
     } else if (cardNumber.match(/[^\d]+/)) { 
-      $('.error').remove();
       $('#cardnumber-input').after('<p class="error w-100">Este campo só aceita números.</p>');
     } else {
       closeModal();
-      $('.error').remove();
       isValidCard(cardNumber);
     }
   }
 } 
+
+const emptyInput = () => $('#cardnumber-input').val('');
 
 const isValidCard = cardNumber => {
   const invertedCardNumberArray = cardNumber.toString().split('').reverse().map(n => parseInt(n));
