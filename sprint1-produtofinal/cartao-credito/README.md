@@ -114,4 +114,4 @@ A versão atual da página foi desenvolvida utilizando:
 
 ## Fluxograma
 
-![Fluxograma da validação de número de cartão de crédito] (docs/fluxograma-validacao-cartao-de-credito.jpeg)
+![Fluxograma da validação de número de cartão de crédito](docs/fluxograma-validacao-cartao-de-credito.jpeg)
